@@ -1,0 +1,70 @@
+---
+title: "fars"
+output:
+  md_document:
+    variant: gfm
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r, echo = FALSE, include = FALSE}
+library(FarsCoursera)
+library(dplyr)
+library(maps)
+```
+
+*CourseraBuildingRPckg is a peer reviewed project to practice R package Building*  
+
+This packages provides functions to **process** and **plot** data from the US National Highway Traffic Safety Administration's [Fatality Analysis Reporting System](https://www.nhtsa.gov/research-data/fatality-analysis-reporting-system-fars).
+
+
+* Process data with `fars_summarize_years()`
+
+* Visualize data with `fars_map_state()`
+
+Those functions **require** that current working directory contains FARS data from the given year named like **accident_[year].csv.bz2**
+
+
+## The data
+
+The packages has 3 files relating the FARS data from 2013 to 2015.
+
+They are accessible under the folder accessible by running the following line.
+
+```{r,eval=FALSE}
+system.file("extdata", package = "FarsCoursera") %>% 
+  list.files()
+```
+
+
+
+## Summarizing data 
+
+Let's process the accidents data of 2013 by summarizing them by month in year in a tibble using the `fars_summarize_years()` function.
+
+
+```{r}
+fars_2013 <- fars_summarize_years(2013)
+fars_2013
+```
+
+Nota Bene `fars_summarize_years()` can also create a summary report for multiple years.
+
+```{r}
+fars_2013_2014 <- fars_summarize_years(c(2013, 2014))
+fars_2013_2014
+```
+
+## Visualizing data
+
+The `fars_map_state` function will plot all accidents locations for a given year and federal state on a US federal state map.
+
+```{r}
+fars_map_state(26, 2014)
+```
+
