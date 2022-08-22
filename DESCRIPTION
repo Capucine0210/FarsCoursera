@@ -13,13 +13,17 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.1
 Imports: 
     dplyr,
-    knitr,
     magrittr,
     maps,
     readr,
-    testthat,
     tibble,
     tidyr
 Depends: 
     R (>= 2.10)
 LazyData: true
+Suggests: 
+    rmarkdown,
+    knitr,
+    testthat
+    
+

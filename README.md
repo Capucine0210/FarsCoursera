@@ -1,5 +1,11 @@
-*CourseraBuildingRPckg is a peer reviewed project to practice R package
-Building*
+*FarsCoursera is a peer reviewed project to practice R package Building*
+
+<!-- badges: start -->
+
+[![R-CMD-check](https://github.com/Capucine0210/FarsCoursera/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/Capucine0210/FarsCoursera/actions/workflows/R-CMD-check.yaml)
+<!-- badges: end -->
+
+**NB: Travis badge is now deprecated and replace by the badge above**
 
 This packages provides functions to **process** and **plot** data from
 the US National Highway Traffic Safety Administration’s [Fatality
